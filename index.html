@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 140px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 150%;
+      left: 50%;
+      margin-left: -75px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Pentru Sorin Moldovan</h1>
+
+  <div>
+    <label>Email:</label>
+    <input type="text" value="soryn.moldovan@gmail.com" id="Email">
+    <div class="tooltip">
+      <button onclick="myFunction('Email')" onmouseout="outFunc('myTooltipEmail')">
+        <span class="tooltiptext" id="myTooltipEmail">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <label>Nume:</label>
+    <input type="text" value="Moldovan" id="Nume">
+    <div class="tooltip">
+      <button onclick="myFunction('Nume')" onmouseout="outFunc('myTooltipNume')">
+        <span class="tooltiptext" id="myTooltipNume">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>Prenume:</label>
+    <input type="text" value="Sorin" id="Prenume">
+    <div class="tooltip">
+      <button onclick="myFunction('Prenume')" onmouseout="outFunc('myTooltipPrenume')">
+        <span class="tooltiptext" id="myTooltipPrenume">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>Serie:</label>
+    <input type="text" value="AR" id="Serie">
+    <div class="tooltip">
+      <button onclick="myFunction('Serie')" onmouseout="outFunc('myTooltipSerie')">
+        <span class="tooltiptext" id="myTooltipSerie">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>Numar:</label>
+    <input type="text" value="735581" id="Numar">
+    <div class="tooltip">
+      <button onclick="myFunction('Numar')" onmouseout="outFunc('myTooltipNumar')">
+        <span class="tooltiptext" id="myTooltipNumar">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>Valabil De La:</label>
+    <input type="text" value="12.08.2015" id="ValabilDeLa">
+    <div class="tooltip">
+      <button onclick="myFunction('ValabilDeLa')" onmouseout="outFunc('myTooltipValabilDeLa')">
+        <span class="tooltiptext" id="myTooltipValabilDeLa">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>Valabil Pana La:</label>
+    <input type="text" value="19.01.2025" id="ValabilPanaLa">
+    <div class="tooltip">
+      <button onclick="myFunction('ValabilPanaLa')" onmouseout="outFunc('myTooltipValabilPanaLa')">
+        <span class="tooltiptext" id="myTooltipValabilPanaLa">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>CNP:</label>
+    <input type="text" value="1810119023971" id="CNP">
+    <div class="tooltip">
+      <button onclick="myFunction('CNP')" onmouseout="outFunc('myTooltipCNP')">
+        <span class="tooltiptext" id="myTooltipCNP">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>Adresa:</label>
+    <input type="text" value="Sat Odvoș (Com. Conop) nr. 93" id="Adresa">
+    <div class="tooltip">
+      <button onclick="myFunction('Adresa')" onmouseout="outFunc('myTooltipAdresa')">
+        <span class="tooltiptext" id="myTooltipAdresa">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div>
+    <label>Telefon:</label>
+    <input type="text" value="0745560501" id="Telefon">
+    <div class="tooltip">
+      <button onclick="myFunction('Telefon')" onmouseout="outFunc('myTooltipTelefon')">
+        <span class="tooltiptext" id="myTooltipTelefon">Copy to clipboard</span>
+        Copy text
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function myFunction(id) {
+      var copyText = document.getElementById(id);
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+
+      var tooltip = document.getElementById("myTooltip"+id);
+      tooltip.innerHTML = "Copied: " + copyText.value;
+    }
+
+    function outFunc(id) {
+      var tooltip = document.getElementById(id);
+      tooltip.innerHTML = "Copy to clipboard";
+    }
+  </script>
+</body>
+
+</html>
